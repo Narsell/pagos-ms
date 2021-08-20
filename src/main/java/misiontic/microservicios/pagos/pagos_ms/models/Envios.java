@@ -1,34 +1,63 @@
 package misiontic.microservicios.pagos.pagos_ms.models;
 
-import org.springframework.data.annotation.Id;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
 public class Envios {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "envio_id")
+    private Long id;
 
+    @Column(name = "envio_nombre")
     private String nombre;
-    private String ciudad;
-    private String departamento;
-    private String direccion;
-    private String celular;
-    private String fechaEntreg;
 
-    public Envios(String envioId, String nombre, String ciudad, String departamento, String direccion, String celular, String fechaEntreg) {
-        this.id = envioId;
+    @Column(name = "envio_ciudad")
+    private String ciudad;
+
+    @Column(name = "envio_departamento")
+    private String departamento;
+
+    @Column(name = "envio_direccion")
+    private String direccion;
+
+    @Column(name = "envio_celular")
+    private String celular;
+
+    @Column(name = "envio_fecha_entrega")
+    private LocalDateTime fechaEntrega;
+
+    @Column(name = "compra_id")
+    private Long compraId;
+
+    public Envios(Long id, String nombre, String ciudad, String departamento, String direccion, String celular, LocalDateTime fechaEntrega, Long compraId) {
+        this.id = id;
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.departamento = departamento;
         this.direccion = direccion;
         this.celular = celular;
-        this.fechaEntreg = fechaEntreg;
+        this.fechaEntrega = fechaEntrega;
+        this.compraId = compraId;
     }
 
-    public String getEnvioId() {
+    public Long getCompraId() {
+        return compraId;
+    }
+
+    public void setCompraId(Long compraId) {
+        this.compraId = compraId;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setEnvioId(String envioId) {
+    public void setId(Long envioId) {
         this.id = envioId;
     }
 
@@ -72,11 +101,11 @@ public class Envios {
         this.celular = celular;
     }
 
-    public String getFechaEntreg() {
-        return fechaEntreg;
+    public LocalDateTime getFechaEntrega() {
+        return fechaEntrega;
     }
 
-    public void setFechaEntreg(String fechaEntreg) {
-        this.fechaEntreg = fechaEntreg;
+    public void setFechaEntrega(LocalDateTime fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
     }
 }
