@@ -49,6 +49,10 @@ public class ComprasController {
             carritosRepository.save(carrito);
         }
 
+        if(envio==null || facturacion==null || carritos==null){
+            comprasRepository.deleteById(compra.getId());
+        }
+
         return new CompraDatosIn(
                 envio,
                 facturacion,
@@ -57,8 +61,8 @@ public class ComprasController {
 
     }
 
-    @GetMapping("/purchase/{compraId}")
-    CompraDatosOut listCompras(@PathVariable Long compraId){
+    @GetMapping("/purchase/id/{compraId}")
+    CompraDatosOut getCompra (@PathVariable Long compraId){
 
          Envios infoEnvio = enviosRepository.findByCompraId(compraId)
                  .orElse(null);
@@ -81,5 +85,6 @@ public class ComprasController {
 
         return compraDatosOut;
     }
+    
 
 }

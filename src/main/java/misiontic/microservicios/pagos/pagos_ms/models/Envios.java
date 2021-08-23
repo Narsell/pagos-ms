@@ -28,19 +28,23 @@ public class Envios {
     @Column(name = "envio_celular")
     private String celular;
 
+    @Column(name = "envio_email")
+    private String email;
+
     @Column(name = "envio_fecha_entrega")
     private LocalDateTime fechaEntrega;
 
     @Column(name = "compra_id")
     private Long compraId;
 
-    public Envios(Long id, String nombre, String ciudad, String departamento, String direccion, String celular, LocalDateTime fechaEntrega, Long compraId) {
+    public Envios(Long id, String nombre, String ciudad, String departamento, String direccion, String celular, String email, LocalDateTime fechaEntrega, Long compraId) {
         this.id = id;
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.departamento = departamento;
         this.direccion = direccion;
         this.celular = celular;
+        this.email = email;
         this.fechaEntrega = fechaEntrega;
         this.compraId = compraId;
     }
@@ -48,6 +52,13 @@ public class Envios {
     public Envios() {
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Long getCompraId() {
         return compraId;
