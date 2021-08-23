@@ -22,6 +22,9 @@ public class Compras {
         this.compraEstado = compraEstado;
     }
 
+    public Compras() {
+    }
+
     public Long getId() {
         return id;
     }

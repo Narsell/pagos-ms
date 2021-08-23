@@ -1,16 +1,24 @@
-package misiontic.microservicios.pagos.pagos_ms.models;
+package misiontic.microservicios.pagos.pagos_ms.models.salidas;
+
+import misiontic.microservicios.pagos.pagos_ms.models.Carritos;
+import misiontic.microservicios.pagos.pagos_ms.models.Compras;
+import misiontic.microservicios.pagos.pagos_ms.models.Envios;
+import misiontic.microservicios.pagos.pagos_ms.models.Facturaciones;
+
 import java.util.List;
 
-public class CompraDatos {
+public class CompraDatosOut {
 
     private Envios informacionEnvio;
     private Facturaciones informacionFacturacion;
     private List<Carritos> informacionCarrito;
+    private Compras informacionCompra;
 
-    public CompraDatos(Envios informacionEnvio, Facturaciones informacionFacturacion, List<Carritos> informacionCarrito) {
+    public CompraDatosOut(Envios informacionEnvio, Facturaciones informacionFacturacion, List<Carritos> informacionCarrito, Compras informacionCompra) {
         this.informacionEnvio = informacionEnvio;
         this.informacionFacturacion = informacionFacturacion;
         this.informacionCarrito = informacionCarrito;
+        this.informacionCompra = informacionCompra;
     }
 
     public Envios getInformacionEnvio() {
@@ -35,5 +43,13 @@ public class CompraDatos {
 
     public void setInformacionCarrito(List<Carritos> informacionCarrito) {
         this.informacionCarrito = informacionCarrito;
+    }
+
+    public Compras getInformacionCompra() {
+        return informacionCompra;
+    }
+
+    public void setInformacionCompra(Compras informacionCompra) {
+        this.informacionCompra = informacionCompra;
     }
 }

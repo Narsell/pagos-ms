@@ -33,6 +33,9 @@ public class Carritos {
         this.compraId = compraId;
     }
 
+    public Carritos() {
+    }
+
     public Long getId() {
         return id;
     }

@@ -40,6 +40,9 @@ public class Facturaciones {
         this.compraId = compraId;
     }
 
+    public Facturaciones() {
+    }
+
     public Long getCompraId() {
         return compraId;
     }

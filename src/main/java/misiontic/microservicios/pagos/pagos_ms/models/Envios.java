@@ -45,6 +45,10 @@ public class Envios {
         this.compraId = compraId;
     }
 
+    public Envios() {
+    }
+
+
     public Long getCompraId() {
         return compraId;
     }
