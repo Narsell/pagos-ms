@@ -29,7 +29,7 @@ public class ComprasController {
     }
 
     @PostMapping("/purchase")
-    CompraDatosIn newCompra(@RequestBody CompraDatosIn compraDatosIn){
+    CompraDatosOut newCompra(@RequestBody CompraDatosIn compraDatosIn){
 
         Compras compra = new Compras(new Date(), "Registrado");
         compra = comprasRepository.save(compra);
@@ -53,11 +53,14 @@ public class ComprasController {
             comprasRepository.deleteById(compra.getId());
         }
 
-        return new CompraDatosIn(
+        CompraDatosOut compraDatosOut = new CompraDatosOut(
                 envio,
                 facturacion,
-                carritos
+                carritos,
+                compra
         );
+
+        return compraDatosOut;
 
     }
 
@@ -85,6 +88,6 @@ public class ComprasController {
 
         return compraDatosOut;
     }
-    
+
 
 }

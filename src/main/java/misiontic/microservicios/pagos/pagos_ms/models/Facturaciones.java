@@ -13,7 +13,7 @@ public class Facturaciones {
     private Long id;
 
     @Column(name = "facturacion_tipo_doc")
-    private String tipoDocumento;
+    private Integer tipoDocumento;
 
     @Column(name = "facturacion_num_doc")
     private String numeroDocumento;
@@ -22,7 +22,7 @@ public class Facturaciones {
     private String numeroCelular;
 
     @Column(name = "facturacion_metodo_pago")
-    private String metodoPago;
+    private Integer metodoPago;
 
     @Column(name = "facturacion_total")
     private Float precioTotal;
@@ -30,7 +30,7 @@ public class Facturaciones {
     @Column(name = "compra_id")
     private Long compraId;
 
-    public Facturaciones(Long id, String tipoDocumento, String numeroDocumento, String numeroCelular, String metodoPago, float precioTotal, Long compraId) {
+    public Facturaciones(Long id, Integer tipoDocumento, String numeroDocumento, String numeroCelular, Integer metodoPago, float precioTotal, Long compraId) {
         this.id = id;
         this.tipoDocumento = tipoDocumento;
         this.numeroDocumento = numeroDocumento;
@@ -59,11 +59,11 @@ public class Facturaciones {
         this.id = id;
     }
 
-    public String getTipoDocumento() {
+    public Integer getTipoDocumento() {
         return tipoDocumento;
     }
 
-    public void setTipoDocumento(String tipoDocumento) {
+    public void setTipoDocumento(Integer tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
     }
 
@@ -83,11 +83,11 @@ public class Facturaciones {
         this.numeroCelular = numeroCelular;
     }
 
-    public String getMetodoPago() {
+    public Integer getMetodoPago() {
         return metodoPago;
     }
 
-    public void setMetodoPago(String metodoPago) {
+    public void setMetodoPago(Integer metodoPago) {
         this.metodoPago = metodoPago;
     }
 
